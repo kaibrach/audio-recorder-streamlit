@@ -26,15 +26,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build
-    - name: Build package
-      run: | 
-        python -m build
-    - name: Check directory
+    - name: Install npm dependencies
       run: |
           ls -la
           cd audio_recorder_streamlit/frontend
           npm install
-          npm run build
+    - name: Build package
+      run: | 
+        python -m build
+        cd audio_recorder_streamlit/frontend
+        npm run build
+        ls -la
       #working-directory: frontend
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
