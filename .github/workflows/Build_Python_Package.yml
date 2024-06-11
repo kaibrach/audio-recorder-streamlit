@@ -20,12 +20,19 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    - name: Install nodejs
+      run: sudo apt-get install -y nodejs
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install build
     - name: Build package
       run: python -m build
+    - name: Build frontend
+      run: | 
+        python -m build
+        cd frontend
+        npm run build
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
