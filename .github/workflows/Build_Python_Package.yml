@@ -29,8 +29,11 @@ jobs:
     - name: Build package
       run: | 
         python -m build
-        npm run build
-      working-directory: frontend
+    - name: Check directory
+      run: |
+          ls -la
+      #npm run build
+      #working-directory: frontend
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
