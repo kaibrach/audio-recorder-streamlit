@@ -33,6 +33,7 @@ jobs:
       run: |
           ls -la
           cd audio_recorder_streamlit/frontend
+          npm install
           npm run build
       #working-directory: frontend
     - name: Store the distribution packages
