@@ -28,9 +28,9 @@ jobs:
         pip install build
     - name: Build package
       run: python -m build
-    - name: Build frontend
-      working-directory: frontend
-      run: npm run build
+#    - name: Build frontend
+#      working-directory: frontend
+#      run: npm run build
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
