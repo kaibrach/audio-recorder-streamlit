@@ -32,7 +32,8 @@ jobs:
     - name: Check directory
       run: |
           ls -la
-      #npm run build
+          cd audio_recorder_streamlit/frontend
+          npm run build
       #working-directory: frontend
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
